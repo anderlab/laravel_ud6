@@ -28,6 +28,17 @@
                         <a class="dropdown-item active" href="#">Castellano</a>
                       </div>
                     </li>
+                    @if(Auth::user()!=null)
+                    <li class="nav-item active">
+
+                    <a class="nav-link" href="/register" >
+                            <i class="fa fa-user-plus"></i>
+                            {{Auth::user()->name}}
+                        </a>
+                        
+                    </li>
+
+                    @else
                     <li class="nav-item active">
                         <a class="nav-link" href="/login" >
                             <i class="fa fa-sign-in"></i>
@@ -40,6 +51,7 @@
                             Registro
                         </a>
                     </li>
+                    @endif
             </ul>
         </div>
     </div>
