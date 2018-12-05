@@ -1,0 +1,9 @@
+.formPerfil {
+    width: 500px;
+    clear: both;
+  }
+  
+  .formPerfil input {
+    width: 100%;
+    clear: both;
+  }

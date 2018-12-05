@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                   Mensajes
                 </div>
             </div>
         </div>
