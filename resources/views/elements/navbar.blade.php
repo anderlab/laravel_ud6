@@ -7,7 +7,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     @auth
-    <a class="navbar-brand" href="{{route('mensajes')}}">MENSAJES</a>
+    <a class="navbar-brand" href="{{route('messages.index')}}">MENSAJES</a>
     @endauth
         <div class="collapse navbar-collapse" id="navbar">
 

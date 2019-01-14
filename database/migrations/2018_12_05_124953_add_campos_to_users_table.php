@@ -14,8 +14,8 @@ class AddCamposToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('telefono');
-            $table->string('bio');
+            $table->string('telefono')->nullable();
+            $table->string('bio')->nullable();
         });
     }
 
@@ -27,7 +27,7 @@ class AddCamposToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['vottelefono', 'bio']);
+            $table->dropColumn(['telefono', 'bio']);
         });
     }
 }

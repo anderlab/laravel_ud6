@@ -14,18 +14,18 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form class="formPerfil">   
+                    <form class="formPerfil" action="{{ route('update') }}" method="post">
                      
-                   
+                   @csrf
                   
                    <br>
-                   <p><b>Nombre de usuario:</b><input type="text" value="{{Auth::user()->name}}"></p>
+                   <p><b>Nombre de usuario:</b><input type="text" name="nombre" value="{{Auth::user()->name}}"></p>
                    <br>
-                   <p><b>Email:</b><input type="text" value="{{Auth::user()->email}}"></p>
+                   <p><b>Email:</b><input type="email" name="email" value="{{Auth::user()->email}}"></p>
                    <br>
-                   <p><b>Telefono:</b><input type="text" value="{{Auth::user()->telefono}}"></p>
+                   <p><b>Telefono:</b><input type="text" name="telefono" value="{{Auth::user()->telefono}}"></p>
                    <br>
-                   <p><b>Sobre mi:</b><input type="text" value="{{Auth::user()->bio}}"></p>
+                   <p><b>Sobre mi:</b><input type="text" name="bio" value="{{Auth::user()->bio}}"></p>
                    <br>
                    <p><b>Fecha de registro:</b>{{Auth::user()->created_at}}</p>
                    <br>

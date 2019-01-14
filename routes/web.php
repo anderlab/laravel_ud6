@@ -18,7 +18,16 @@ Route::get('/welcome', function () {
 Route::get('/', ['as'=>'home','uses'=>'AppController@index']);
 
 Auth::routes();
-
+Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/mensajes', ['as'=>'mensajes','uses'=>'MensajesController@index']);
 Route::get('/perfil', ['as'=>'perfil','uses'=>'PerfilController@index']);
+Route::post('/update', ['as'=>'update','uses'=>'PerfilController@update']);
+
+
+Route::get('/messages', ['as'=>'messages.index','uses'=>'MessageController@index']);
+Route::get('/messages/create', ['as'=>'messages.create','uses'=>'MessageController@create']);
+Route::post('/messages', ['as'=>'messages.store','uses'=>'MessageController@store']);
+Route::get('/messages/{message}', ['as'=>'messages.show','uses'=>'MessageController@show']);
+Route::get('/messages/{message}/edit', ['as'=>'messages.edit','uses'=>'MessageController@edit']);
+Route::put('/messages/{message}', ['as'=>'messages.update','uses'=>'MessageController@update']);
+Route::get('/messages/{message}', ['as'=>'messages.destroy','uses'=>'MessageController@destroy']);
